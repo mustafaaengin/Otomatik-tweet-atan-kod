@@ -3,8 +3,8 @@ from datetime import datetime
 import time
 import json
 
-consumer_key = "GKdYI3JXtkzVFzgaJVPz2j0NI"
-consumer_secret = "cqtjPitx0AYL7RX9A6cpbkcjf6qKFdXHQqQoFcTkCQHGB5wPdV"
+consumer_key = "kendi keyini gir"
+consumer_secret = "kendi secret keyini gir"
 
 oauth = OAuth1Session(consumer_key, client_secret=consumer_secret)
 
@@ -43,7 +43,7 @@ oauth = OAuth1Session(
 )
 
 while True:
-    bugun = datetime.now().strftime("%Y-%m-%d %H")  # Şu anki tarih ve saat
+    bugun = datetime.now().strftime("%Y-%m-%d %H")  
 
     with open('tweet_verisi.json', 'r', encoding='utf-8') as file:
         lines = file.readlines()
@@ -52,16 +52,16 @@ while True:
 
     found = False
     for line in lines:
-        file_info = line.split("Tarih: ")[1].split(" Tweet")[0].strip()  # Dosyadan çekilen tarih ve saat
+        file_info = line.split("Tarih: ")[1].split(" Tweet")[0].strip()  
         print("Dosyadan Çekilen Tarih ve Saat:", file_info)
         if file_info == bugun:
-            tweet_verisi = line.split("Tweet: ")[1].strip()  # Tweet içeriğini al
+            tweet_verisi = line.split("Tweet: ")[1].strip()  
             print("Eşleşen Tweet:", tweet_verisi)
             found = True
             break
 
     if found:
-        payload = {"text": tweet_verisi}  # v2 API'si için text anahtarını kullanıyoruz
+        payload = {"text": tweet_verisi} 
         response = oauth.post("https://api.twitter.com/2/tweets", json=payload)
 
         if response.status_code != 201:
