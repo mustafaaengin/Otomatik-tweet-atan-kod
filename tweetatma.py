@@ -45,7 +45,7 @@ oauth = OAuth1Session(
 while True:
     bugun = datetime.now().strftime("%Y-%m-%d %H")  
 
-    with open('tweet_verisi.json', 'r', encoding='utf-8') as file:
+    with open('.json dosyanın ismi', 'r', encoding='utf-8') as file:
         lines = file.readlines()
 
     print("Güncel Saat:", bugun)
@@ -74,3 +74,7 @@ while True:
         print("Eşleşme Yok")
 
     time.sleep(60)
+
+
+
+        # bu kod bilgisayarınızda bulunan bir dosyadan veri çeker ve bu veriyi tweet olarak atar. dosyanızdaki verinin nasıl olması gerektiği json dosyasında gösterilmektedir
