@@ -5,8 +5,8 @@ from requests_oauthlib import OAuth1Session
 import time
 
 # Twitter API kimlik bilgileri
-consumer_key = "GKdYI3JXtkzVFzgaJVPz2j0NI"
-consumer_secret = "cqtjPitx0AYL7RX9A6cpbkcjf6qKFdXHQqQoFcTkCQHGB5wPdV"
+consumer_key = "kenfi keyini gir"
+consumer_secret = "secret keyini gir"
 
 # GitHub'dan veri çekme ve karşılaştırma fonksiyonu
 def veri_cek_ve_karsilastir(github_url):
@@ -69,7 +69,7 @@ oauth = OAuth1Session(
 )
 
 while True:
-    github_url = "https://raw.githubusercontent.com/mustafaaengin/Otomatik-tweet-atan-kod/main/tweet_verisi.json"  # GitHub raw dosya URL'si
+    github_url = "kendi raw dosyanın yolunu gir"  # GitHub raw dosya URL'si
     
     # GitHub'dan tweet içeriğini çek
     tweet_icerigi = veri_cek_ve_karsilastir(github_url)
@@ -90,4 +90,4 @@ while True:
     else:
         print("Eşleşme Yok veya Hata Oluştu.")
 
-    time.sleep(60)  # Her bir dakika sonra tekrar döngüyü başlat
+    time.sleep(60)  # Her bir dakika sonra tekrar döngüyü başlat. Buradaki 60 sayısını kaç saniyede bir tekrar kontrol etmesini istiyorsan ona göre değiştir
